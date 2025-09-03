@@ -13,6 +13,14 @@ export const Categories: CollectionConfig = {
     update: authenticated,
   },
   admin: {
+    components: {
+      edit: {
+        SaveButton: {
+          path: '/components/CustomSaveButton/CustomSaveButton.tsx#CustomSaveButton',
+          // exportName: 'CustomSaveButton',
+        },
+      },
+    },
     useAsTitle: 'title',
   },
   fields: [

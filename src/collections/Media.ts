@@ -77,4 +77,14 @@ export const Media: CollectionConfig = {
       },
     ],
   },
+  admin: {
+    components: {
+      edit: {
+        SaveButton: {
+          path: '/components/CustomSaveButton/CustomSaveButton.tsx#CustomSaveButton',
+          // exportName: 'CustomSaveButton',
+        },
+      },
+    },
+  },
 }
