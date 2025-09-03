@@ -109,3 +109,111 @@
     }
   }
 }
+
+
+/* Sidebar base */
+
+.nav__header {
+  position: sticky;   /* stick to top instead of overlay */
+  top: 0;
+  z-index: 10;
+  background: inherit; /* use same gradient as sidebar */
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Push down nav content so it doesn't overlap */
+.nav__scroll {
+  padding-top: 3.5rem; /* space for the header height */
+}
+.nav {
+  background: linear-gradient(180deg, #1e3a8a 0%, #312e81 100%) !important;
+  color: #f9fafb;
+  width: 250px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.25);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Scrollable section */
+// .nav__scroll {
+//   padding: 1rem;
+//   overscroll-behavior: contain !important;
+// }
+
+/* Section Groups */
+.nav-group__label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #a5b4fc;
+  padding: 0.75rem 0.5rem;
+}
+
+.nav-group__toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.nav-group__toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+
+/* Links */
+.nav__link {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  margin: 0.25rem 0;
+  color: #e0e7ff !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+
+/* Active link (Payload usually applies .nav__link--active, so style it) */
+.nav__link--active {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Logout button */
+.nav__controls {
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.nav__log-out {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav__log-out:hover {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+  transform: scale(1.05);
+}
