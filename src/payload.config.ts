@@ -34,6 +34,7 @@ export default buildConfig({
       // Feel free to delete this at any time. Simply remove the line below.
       beforeDashboard: ['@/components/BeforeDashboard'],
 
+      
       //Can be used for overriding the admin dashboard view
       views: {
         dashboard: {

@@ -19,6 +19,19 @@ export const Users: CollectionConfig = {
 
   admin: {
     components: {
+      // components: {
+      edit: {
+        PublishButton: {
+          path: '/components/CustomPublishButton/CustomPublishButton.tsx',
+          exportName: 'CustomPublishButton',
+        },
+        SaveButton: {
+          path: '/components/CustomSaveButton/CustomSaveButton.tsx#CustomSaveButton',
+          // exportName: 'CustomSaveButton',
+        },
+        // },
+      },
+
       // views: {
       //   list: {
       //     Component: '/components/CustomUserCollectionView/CustomUserCollectionView.tsx',
@@ -26,10 +39,6 @@ export const Users: CollectionConfig = {
       //   // list: '/components/CustomUserCollectionView/CustomUserCollectionView.tsx',
       // },
       // edit: {
-      //   SaveButton: {
-      //     path: '/components/CustomSaveButton/CustomSaveButton.tsx#CustomSaveButton',
-      //     // exportName: 'CustomSaveButton',
-      //   },
       // },
     },
     defaultColumns: ['name', 'email'],
