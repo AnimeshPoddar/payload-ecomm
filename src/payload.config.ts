@@ -16,19 +16,55 @@ import { Header } from './Header/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
-
+// import { } from "./components/CustomRootDashboardView/CustomRootDashboardView";
+import MyCustomHeader from './components/AdminCustomHeader/AdminCustomHeader'
+import css from 'styled-jsx/css'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
   admin: {
     components: {
+      header: ['/components/AdminCustomHeader/AdminCustomHeader.tsx'],
+
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below.
       beforeLogin: ['@/components/BeforeLogin'],
       // The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below.
       beforeDashboard: ['@/components/BeforeDashboard'],
+
+      //Can be used for overriding the admin dashboard view
+      views: {
+        dashboard: {
+          Component: '/components/CustomRootDashboardView/CustomRootDashboardView.tsx',
+        },
+      },
+
+      /**
+       *Can be used for defining multiple routes at the root level
+       *Accessible via : /admin/dashboard, /admin/my-custom-view
+       */
+
+      // views: [
+      //   {
+      //     slug: 'dashboard', // reserved slug
+      //     path: '/dashboard', // root path
+      //     Component: '/components/CustomRootDashboardView/CustomRootDashboardView.tsx',
+      //     meta: {
+      //       title: 'Dashboard',
+      //     },
+      //   },
+      //   {
+      //     slug: 'my-custom-view',
+      //     path: '/my-custom-view',
+      //     Component:
+      //       '/components/CustomRootLevelView/CustomRootLevelView.tsx#MyCustomRootLevelView',
+      //     meta: {
+      //       title: 'Custom Dashboard',
+      //     },
+      //   },
+      // ],
     },
     importMap: {
       baseDir: path.resolve(dirname),

@@ -1,6 +1,8 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
+import css from 'styled-jsx/css'
+import path from 'path'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -11,7 +13,25 @@ export const Users: CollectionConfig = {
     read: authenticated,
     update: authenticated,
   },
+  custom: {
+    css: path.resolve(__dirname, './src/app/(payload)/custom.scss'),
+  },
+
   admin: {
+    components: {
+      // views: {
+      //   list: {
+      //     Component: '/components/CustomUserCollectionView/CustomUserCollectionView.tsx',
+      //   },
+      //   // list: '/components/CustomUserCollectionView/CustomUserCollectionView.tsx',
+      // },
+      // edit: {
+      //   SaveButton: {
+      //     path: '/components/CustomSaveButton/CustomSaveButton.tsx#CustomSaveButton',
+      //     // exportName: 'CustomSaveButton',
+      //   },
+      // },
+    },
     defaultColumns: ['name', 'email'],
     useAsTitle: 'name',
   },
